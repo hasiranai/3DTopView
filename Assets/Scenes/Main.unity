@@ -131,6 +131,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2466548407522557452, guid: 64c9d96775079344fac674889078804c, type: 3}
+      propertyPath: m_Height
+      value: 1.0618056
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466548407522557452, guid: 64c9d96775079344fac674889078804c, type: 3}
+      propertyPath: m_Center.y
+      value: 0.51656073
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466548407522557452, guid: 64c9d96775079344fac674889078804c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466548407522557452, guid: 64c9d96775079344fac674889078804c, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8703872773199547215, guid: 64c9d96775079344fac674889078804c, type: 3}
       propertyPath: m_Name
       value: Unity_Chan_generic
@@ -202,6 +218,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8703872773199547215, guid: 64c9d96775079344fac674889078804c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 672159957}
+    - targetCorrespondingSourceObject: {fileID: 8703872773199547215, guid: 64c9d96775079344fac674889078804c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 672159958}
   m_SourcePrefab: {fileID: 100100000, guid: 64c9d96775079344fac674889078804c, type: 3}
 --- !u!1001 &569996519
 PrefabInstance:
@@ -308,6 +327,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &672159958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672159956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4938cc5f9836a48caaeb9a21ace18ea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,7 +356,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &705507994
 Light:
   m_ObjectHideFlags: 0
