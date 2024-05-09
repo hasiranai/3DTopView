@@ -515,6 +515,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1262635086}
   - component: {fileID: 1262635085}
+  - component: {fileID: 1262635087}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -577,6 +578,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1262635087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262635084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2550066ae0f6044e69275256d1837190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObj: {fileID: 1684424343}
+  cameraRotateSpeed: 80
+  maxLimit: 45
+  minLimit: 25
 --- !u!1001 &1308618497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -662,26 +679,13 @@ PrefabInstance:
       addedObject: {fileID: 1684424345}
     - targetCorrespondingSourceObject: {fileID: 5962506490023308739, guid: 99f7c8f093b0a53498977df82047195b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1684424344}
+      addedObject: {fileID: 1684424349}
   m_SourcePrefab: {fileID: 100100000, guid: 99f7c8f093b0a53498977df82047195b, type: 3}
 --- !u!1 &1684424343 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5962506490023308739, guid: 99f7c8f093b0a53498977df82047195b, type: 3}
   m_PrefabInstance: {fileID: 1308618497}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1684424344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684424343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4938cc5f9836a48caaeb9a21ace18ea4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 3
 --- !u!54 &1684424345
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -714,3 +718,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5962506490023211491, guid: 99f7c8f093b0a53498977df82047195b, type: 3}
   m_PrefabInstance: {fileID: 1308618497}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1684424349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684424343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfd1cd272d6434f75b58698b96ad6593, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
