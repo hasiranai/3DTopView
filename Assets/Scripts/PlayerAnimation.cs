@@ -36,7 +36,15 @@ public class PlayerAnimation : MonoBehaviour
         anim.SetBool(nextAnimState.ToString(), isChange);
     }
 
-    // TODO Trigger 型のパラメータのアニメの再生
+    /// <summary>
+    /// Trigger 型のパラメータのアニメの再生
+    /// 連続攻撃・ジャンプなど
+    /// </summary>
+    /// <param name="nextAnimState"></param>
+    public void ChangeAnimationTrigger(PlayerAnimationState nextAnimState)
+    {
+        anim.SetTrigger(nextAnimState.ToString());
+    }
 
     /// <summary>
     /// Animator コンポーネントの取得用

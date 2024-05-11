@@ -6,6 +6,8 @@ public class PlayerJump : MonoBehaviour
 {
     private Rigidbody rb;
 
+    private PlayerAnimation playerAnim;   // Rigidbody と同じ private なので、ここに追加する
+
     [SerializeField, Header("接地判定")]
     private bool isGrounded;
 
@@ -19,7 +21,10 @@ public class PlayerJump : MonoBehaviour
     {
         TryGetComponent(out rb);
 
-        // TODO アニメ用のコンポーネント取得
+        // アニメ用のコンポーネント取得
+        TryGetComponent(out playerAnim);
+
+        // TODO ジャンプ力を外部クラスの情報から設定
     }
 
     void Update()
@@ -45,7 +50,8 @@ public class PlayerJump : MonoBehaviour
     /// </summary>
     private void Jump()
     {
-        // TODO アニメ処理
+        // アニメ処理
+        playerAnim.ChangeAnimationTrigger(PlayerAnimationState.Jump);
 
         // ジャンプ
         rb.AddForce(Vector3.up * jumpPower);
