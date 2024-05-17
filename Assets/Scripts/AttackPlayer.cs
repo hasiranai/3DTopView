@@ -6,7 +6,7 @@ public class AttackPlayer : MonoBehaviour
 {
     private PlayerAnimation playerAnim;
 
-    private int attackPower;
+    private int attackPower = -5;
 
     [SerializeField]
     private BoxCollider boxCol;   // 武器のゲームオブジェクトをアサインし、コライダーの情報を登録する
@@ -15,8 +15,27 @@ public class AttackPlayer : MonoBehaviour
     {
         TryGetComponent(out playerAnim);
 
+        if (TryGetComponent(out playerAnim))
+        {
+            Debug.Log("PlayerAnimationコンポーネントが見つかりました");
+        }
+        else
+        {
+            Debug.LogError("PlayerAnimationコンポーネントが見つかりません");
+        }
+
         // 武器のコライダーをオフにする
         boxCol.enabled = false;
+
+        if (boxCol == null)
+        {
+            Debug.LogError("BoxColliderがアサインされていません");
+        }
+        else
+        {
+            // 武器のコライダーをオフにする
+            boxCol.enabled = false;
+        }
 
         // TODO CharaData から貰う
     }
@@ -40,6 +59,17 @@ public class AttackPlayer : MonoBehaviour
         // コライダーのオンオフ切り替え
         boxCol.enabled = switchIndex == 0 ? true : false;
 
+        if (boxCol != null)
+        {
+            // コライダーのオンオフ切り替え
+            boxCol.enabled = switchIndex == 0 ? true : false;
+            Debug.Log("コライダーの状態を切り替えました: " + boxCol.enabled);
+        }
+        else
+        {
+            Debug.LogError("BoxColliderがアサインされていません");
+        }
+
         Debug.Log(boxCol.enabled);
     }
 
@@ -58,7 +88,8 @@ public class AttackPlayer : MonoBehaviour
         {
             // 敵の Hp を減少させる
             health.TakeDamage(-attackPower);
-
+            
+            Debug.Log("攻撃力 : " + attackPower);
             Debug.Log("攻撃ヒット");
         }
     }
