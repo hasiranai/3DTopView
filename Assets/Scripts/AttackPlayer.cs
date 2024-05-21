@@ -6,10 +6,14 @@ public class AttackPlayer : MonoBehaviour
 {
     private PlayerAnimation playerAnim;
 
-    private int attackPower = -5;
+    [SerializeField]
+    private int attackPower;
 
     [SerializeField]
     private BoxCollider boxCol;   // 武器のゲームオブジェクトをアサインし、コライダーの情報を登録する
+
+    [SerializeField]
+    private TrailRenderer trailRenderer;   // トレイル用のゲームオブジェクトをアサイン
 
     void Start()
     {
@@ -51,7 +55,7 @@ public class AttackPlayer : MonoBehaviour
 
     /// <summary>
     /// AnimationEvent から実行
-    /// コライダーのオンオフ切り替え
+    /// コライダーとトレイルのオンオフ切り替え
     /// </summary>
     /// <param name="switchIndex"></param>
     private void SwitchWeaponCollider(int switchIndex)
@@ -71,6 +75,9 @@ public class AttackPlayer : MonoBehaviour
         }
 
         Debug.Log(boxCol.enabled);
+
+        // トレイルオンオフ切り替え
+        trailRenderer.enabled = switchIndex == 0 ? true : false;
     }
 
     // 武器のコライダーによる侵入判定
